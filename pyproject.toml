@@ -1,0 +1,31 @@
+[project]
+name = "ai-auto-short"
+version = "0.1.0"
+description = "自動化生成 YouTube Shorts 短影片系統"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.42.0",
+    "google-genai>=1.0.0",
+    "moviepy>=2.0.0",
+    "openai-whisper>=20240930",
+    "Pillow>=10.0.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "typer>=0.12.0",
+    "yt-dlp>=2024.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[project.scripts]
+ai-short = "src.cli:app"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
